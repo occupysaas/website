@@ -463,6 +463,28 @@
             </div>
           </details>
           <details>
+            <summary>Why Go?</summary>
+            <div>
+              <p>Portability. A Go project compiles to a single self-contained binary, so self-hosting means dropping one
+              file onto a server or into a Docker or Podman image &mdash; no installer, no runtime to set up, no tree of
+              shared libraries to keep in sync. The same toolchain cross-compiles for Linux, macOS, Windows, x86 and ARM,
+              and the result fits in a minimal container image. If you're leaving a SaaS vendor, the replacement should be
+              this easy to carry.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Why not Rust?</summary>
+            <div>
+              <p>Nothing is wrong with Rust, and we're not against it. Go was picked for the first projects because it makes
+              the one-file, container-friendly drop-in the default with very little build setup. Rust can get there too;
+              Go just gets there more simply for the kind of servers we're building.</p>
+              <p>Rust recreations of these projects are welcome &mdash; they just haven't been made yet. The specs, API
+              contracts and compatibility tests are language-neutral, so a Rust port can be checked against the same
+              SDKs. If you want to start one, <a href="https://github.com/occupysaas/website/issues/new?title=Rust%20port%3A%20">open an issue</a>
+              and say which project.</p>
+            </div>
+          </details>
+          <details>
             <summary>Is it production-ready?</summary>
             <div>
               <p>Not yet. Both first projects are early and say so plainly in their READMEs, along with exactly which
