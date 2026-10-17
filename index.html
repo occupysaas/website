@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OccupySaaS — They laid us off. We're rebuilding their SaaS.</title>
+  <meta name="description" content="OccupySaaS is a protest movement in code: laid-off developers building clean-room, open-source, drop-in replacements for the SaaS giants. First up: ZeroAuthy (Auth0) and SalesCompel (Salesforce).">
+  <link rel="canonical" href="https://occupysaas.com/">
+  <meta property="og:url" content="https://occupysaas.com/">
+  <meta name="theme-color" content="#111111">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OccupySaaS — They laid us off. We're rebuilding their SaaS.">
+  <meta property="og:description" content="Clean-room, AI-assisted, open-source, drop-in replacements for the SaaS giants. Apache-2.0. Self-hosted. No per-seat tax.">
+  <meta property="og:image" content="https://occupysaas.com/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- roughens edges of the red display words so they read like brush paint -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="4"/>
+    </filter>
+  </svg>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top" aria-label="OccupySaaS home">
+        <img src="assets/img/favicon.svg" alt="" width="34" height="34">
+        <span>Occupy<span class="red">SaaS</span></span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span></button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#why">Why</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#next">Next</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="btn" href="https://github.com/occupysaas">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div>
+          <span class="kicker">Est. October 2026 · Apache-2.0</span>
+          <h1>
+            <span class="line">They laid</span>
+            <span class="line">us off.</span>
+            <span class="line brush">We're rebuilding</span>
+            <span class="line">their SaaS.</span>
+          </h1>
+          <p class="lede">
+            OccupySaaS is a protest movement written in code. Laid-off engineers, armed with AI and public documentation,
+            are building <strong>clean-room, open-source, drop-in replacements</strong> for the platforms that
+            rent our own industry back to us &mdash; one seat at a time.
+          </p>
+          <div class="hero__ctas">
+            <a class="btn btn--red" href="#projects">See the first releases</a>
+            <a class="btn btn--ghost" href="#join">Join the occupation</a>
+          </div>
+        </div>
+        <div class="hero__logo">
+          <img src="assets/img/logo.png" alt="OccupySaaS logo: a raised fist holds a laptop showing a code symbol above a crowd of protesters with placards, in front of SaaS company skyscrapers. Below, OCCUPY in red brush letters and SAAS in black." width="1000" height="1000" fetchpriority="high">
+          <div class="hero__stamp">We are the<br>1,000,000</div>
+        </div>
+      </div>
+      <div class="hero__crowd" role="presentation"></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Open source</span><span>Clean room</span><span>Drop-in compatible</span><span>Self-hosted</span>
+        <span>No per-seat tax</span><span>Your data, your servers</span><span>Fork the 1%</span><span>Spec, not stolen code</span>
+        <span>Open source</span><span>Clean room</span><span>Drop-in compatible</span><span>Self-hosted</span>
+        <span>No per-seat tax</span><span>Your data, your servers</span><span>Fork the 1%</span><span>Spec, not stolen code</span>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="kicker">The grievances</span>
+          <h2>The software built<br>by the 99% <span class="brush">belongs</span><br>to the 99%.</h2>
+          <p class="lede">
+            In 2011, Occupy Wall Street asked who the economy was really working for. In 2026 we're asking the same
+            question about the cloud. The tools every company runs on are now toll booths &mdash; and the
+            people who built them were shown the door.
+          </p>
+        </div>
+
+        <div class="signs">
+          <article class="sign reveal">
+            <div class="sign__board">
+              <div class="sign__slogan">Per-seat pricing is a <em>tax</em> on growth</div>
+              <p>Every hire, every intern, every contractor &mdash; another line item. Infrastructure shouldn't charge rent by the head.</p>
+            </div>
+          </article>
+          <article class="sign reveal">
+            <div class="sign__board">
+              <div class="sign__slogan">Lock-in is not a <em>feature</em></div>
+              <p>Proprietary APIs, export walls and surprise price hikes keep customers captive. Compatible open alternatives set them free.</p>
+            </div>
+          </article>
+          <article class="sign reveal">
+            <div class="sign__board">
+              <div class="sign__slogan">They cut us. We <em>commit</em>.</div>
+              <p>A million engineers were let go while the platforms kept growing. We still know how to ship. Now we ship it in the open.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="section section--dark" id="method">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="kicker">The method</span>
+          <h2>Clean room.<br><span class="brush">AI rebuild.</span><br>Drop-in.</h2>
+          <p class="lede">
+            We don't leak, decompile or copy anyone's code. Every project is rebuilt from public documentation and
+            open standards, with AI doing the heavy lifting on the build side of a strict firewall &mdash; then
+            proven compatible against the vendors' own public SDKs.
+          </p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <h3>Read the public record</h3>
+            <p>Public API references, open standards (OAuth 2.0, OIDC, REST) and published SDK behaviour become a written specification. Nothing confidential, nothing leaked, nothing from former employers.</p>
+          </li>
+          <li class="step reveal">
+            <h3>Raise the firewall</h3>
+            <p>Spec writers and builders stay separated. Each repo carries a <code>CLEAN_ROOM.md</code> policy, and provenance is recorded for every fixture and reference.</p>
+          </li>
+          <li class="step reveal">
+            <h3>Rebuild with AI</h3>
+            <p>AI agents implement from the spec alone &mdash; contracts first (<code>openapi.yaml</code>), then code, then tests &mdash; under human review at every merge.</p>
+          </li>
+          <li class="step reveal">
+            <h3>Prove compatibility</h3>
+            <p>A compatibility laboratory runs the vendors' own public client SDKs against our server. If your existing code doesn't work unchanged, it isn't done.</p>
+          </li>
+          <li class="step reveal">
+            <h3>Release it to everyone</h3>
+            <p>Apache-2.0. Self-hostable. Pluggable storage. No telemetry you didn't ask for, and no seat counter.</p>
+          </li>
+        </ol>
+
+        <div class="firewall reveal" aria-label="Clean-room firewall diagram">
+          <div class="firewall__side">
+            <h4>Allowed in &rarr;</h4>
+            <ul>
+              <li>Public API docs</li>
+              <li>Open standards &amp; RFCs</li>
+              <li>Public SDK behaviour</li>
+              <li>Black-box test results</li>
+            </ul>
+          </div>
+          <div class="firewall__wall"><span>Clean room</span></div>
+          <div class="firewall__side">
+            <h4>&times; Never allowed</h4>
+            <ul>
+              <li>Leaked or proprietary source</li>
+              <li>Decompiled binaries</li>
+              <li>Former-employer confidential info</li>
+              <li>Copied UI assets or trademarks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="kicker">First releases</span>
+          <h2>Two towers<br><span class="brush">occupied.</span></h2>
+          <p class="lede">
+            Identity and CRM: the two subscriptions almost every company pays for and almost nobody loves.
+            Both are early, both are public, and both welcome contributors today.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project__top">
+              <span class="badge">Early · in the open</span>
+              <span>Go</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__name">Zero<span class="red">Authy</span></h3>
+              <div class="project__vs">Replaces <s>Auth0</s></div>
+              <p>
+                A self-hostable identity server that speaks the Auth0 Authentication API. Point an existing Auth0 SDK at
+                a ZeroAuthy tenant domain and it works with no code changes.
+              </p>
+              <ul class="checks">
+                <li>OIDC discovery, JWKS &amp; multi-tenant domains</li>
+                <li>Hosted login, authorization code + PKCE</li>
+                <li><code>client_credentials</code>, rotating refresh tokens, revoke &amp; logout</li>
+                <li>Verified with auth0-spa-js, auth0-react &amp; nextjs-auth0</li>
+              </ul>
+<pre class="term"><span class="c"># build &amp; run</span>
+<span class="p">$ </span>go build -o bin/zeroauthy ./cmd/zeroauthy
+<span class="p">$ </span>./bin/zeroauthy serve --config config.yaml
+<span class="p">$ </span>curl https://localhost:8443/.well-known/openid-configuration</pre>
+              <div class="tags">
+                <span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">gRPC plugins</span><span class="tag">Apache-2.0</span>
+              </div>
+              <div class="project__foot">
+                <a class="btn" href="https://github.com/occupysaas/zeroauthy">View on GitHub</a>
+                <a class="btn btn--ghost" href="https://github.com/occupysaas/zeroauthy/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__top">
+              <span class="badge">Early · in the open</span>
+              <span>Go · Vue · TypeScript</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__name">Sales<span class="red">Compel</span></h3>
+              <div class="project__vs">Replaces <s>Salesforce</s></div>
+              <p>
+                A free, open-source Salesforce replacement with a tenant-isolated Go/PostgreSQL core, a Vue record
+                editor, and a compatibility laboratory that checks behaviour against Salesforce's public API contract.
+              </p>
+              <ul class="checks">
+                <li>Persistent Account &amp; Contact CRUD</li>
+                <li>Object <code>describe</code> and limited queries</li>
+                <li>External-ID upsert &amp; bearer authentication</li>
+                <li>OpenAPI 3.2 REST contract &amp; offline test lab</li>
+              </ul>
+<pre class="term"><span class="c"># run the compatibility laboratory</span>
+<span class="p">$ </span>npm ci --prefix compat/clients/node --ignore-scripts
+<span class="p">$ </span>npm --prefix compat/clients/node run check</pre>
+              <div class="tags">
+                <span class="tag">PostgreSQL</span><span class="tag">Multi-tenant</span><span class="tag">REST</span><span class="tag">i18n</span><span class="tag">Apache-2.0</span>
+              </div>
+              <div class="project__foot">
+                <a class="btn" href="https://github.com/occupysaas/salescompel">View on GitHub</a>
+                <a class="btn btn--ghost" href="https://github.com/occupysaas/salescompel/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT -->
+    <section class="section section--rule" id="next">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="kicker">The occupation map</span>
+          <h2>Who's <span class="brush">next?</span></h2>
+          <p class="lede">
+            Every category on this board is a monthly invoice somewhere. The movement picks the next target in public &mdash;
+            bring a spec, a use case, or a grudge.
+          </p>
+        </div>
+
+        <div class="targets reveal">
+          <div class="target target--live">
+            <span class="target__status">● Occupied</span>
+            <h3>Identity &amp; Auth</h3>
+            <p>ZeroAuthy &mdash; Auth0-compatible login, tokens and tenants.</p>
+          </div>
+          <div class="target target--live">
+            <span class="target__status">● Occupied</span>
+            <h3>CRM</h3>
+            <p>SalesCompel &mdash; Salesforce-compatible records and REST API.</p>
+          </div>
+          <div class="target">
+            <span class="target__status">○ Proposed</span>
+            <h3>Docs &amp; Wikis</h3>
+            <p>Team knowledge bases that don't lock your writing behind a seat licence.</p>
+          </div>
+          <div class="target">
+            <span class="target__status">○ Proposed</span>
+            <h3>Issue Tracking</h3>
+            <p>Tickets, sprints and boards with a compatible API for existing integrations.</p>
+          </div>
+          <div class="target">
+            <span class="target__status">○ Proposed</span>
+            <h3>Feature Flags</h3>
+            <p>SDK-compatible flag evaluation you can run next to your own services.</p>
+          </div>
+          <div class="target">
+            <span class="target__status">○ Proposed</span>
+            <h3>Observability</h3>
+            <p>Logs, metrics and traces without per-gigabyte ransom notes.</p>
+          </div>
+          <div class="target">
+            <span class="target__status">○ Proposed</span>
+            <h3>Customer Support</h3>
+            <p>Help desk, inbox and knowledge base, priced at zero agents.</p>
+          </div>
+          <a class="target target--ask" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20&amp;body=Which%20SaaS%20should%20we%20occupy%20next%2C%20and%20why%3F">
+            <span class="target__status red">+ Your pick</span>
+            <h3>Propose a target</h3>
+            <p>Open an issue and make the case.</p>
+          </a>
+        </div>
+        <p class="targets-note">Proposed categories are open for discussion, not commitments. Names of existing products are used only to describe compatibility.</p>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="section section--rule" id="history">
+      <div class="wrap history">
+        <div class="reveal">
+          <span class="kicker">Lineage</span>
+          <h2>From Zuccotti Park<br>to <span class="brush">git push.</span></h2>
+          <p class="lede">
+            <a href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street</a> began on
+            17 September 2011 in Zuccotti Park, New York City, with a simple frame: the 1% and the 99%.
+            It had no leaders, made decisions in open assemblies, and spread to hundreds of cities.
+          </p>
+          <p>
+            OccupySaaS borrows that spirit and swaps tents for terminals. No marches, no property damage &mdash;
+            just working software, published under an open licence, that anyone can run.
+          </p>
+          <blockquote class="quote">
+            <p>&ldquo;We are the 99%.&rdquo;</p>
+            <footer>&mdash; Occupy Wall Street, 2011</footer>
+          </blockquote>
+        </div>
+
+        <ol class="timeline reveal">
+          <li>
+            <time datetime="2011-09-17">17 Sep 2011</time>
+            <strong>Occupy Wall Street begins</strong>
+            <p>Protesters set up camp in Zuccotti Park in Manhattan's Financial District.</p>
+          </li>
+          <li>
+            <time datetime="2011-10">Oct 2011</time>
+            <strong>The movement spreads</strong>
+            <p>Occupy camps and general assemblies appear in cities around the world.</p>
+          </li>
+          <li>
+            <time datetime="2011-11-15">15 Nov 2011</time>
+            <strong>Zuccotti Park is cleared</strong>
+            <p>The camp ends; the language of the 1% and the 99% doesn't.</p>
+          </li>
+          <li>
+            <time datetime="2022">2022 &ndash; 2025</time>
+            <strong>The great tech layoffs</strong>
+            <p>Wave after wave of cuts across the industry while subscription prices keep climbing.</p>
+          </li>
+          <li>
+            <time datetime="2026-10-14">14 Oct 2026</time>
+            <strong>ZeroAuthy goes public</strong>
+            <p>The first clean-room rebuild opens its repo under Apache-2.0.</p>
+          </li>
+          <li class="now">
+            <time datetime="2026-10-15">15 Oct 2026</time>
+            <strong>SalesCompel joins the occupation</strong>
+            <p>The second tower. More to come &mdash; decided in the open.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="section section--dark join" id="join">
+      <div class="wrap">
+        <span class="kicker">Join</span>
+        <h2>Occupy <span class="brush">everything.</span></h2>
+        <p class="lede">You don't need permission, a badge or a manager. You need a laptop and an afternoon.</p>
+
+        <div class="ways">
+          <div class="way reveal">
+            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+            <h3>Write code</h3>
+            <p>Pick an open issue, follow the clean-room policy, open a pull request.</p>
+          </div>
+          <div class="way reveal">
+            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6"/><rect x="3" y="14" width="18" height="6"/><path d="M7 7h.01M7 17h.01"/></svg>
+            <h3>Self-host it</h3>
+            <p>Run a release against your real SDKs and tell us exactly where it breaks.</p>
+          </div>
+          <div class="way reveal">
+            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
+            <h3>Write specs</h3>
+            <p>Turn public docs into precise, testable specifications for the builders.</p>
+          </div>
+          <div class="way reveal">
+            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l15-6v14L3 13z"/><path d="M7 13v5h3v-4"/></svg>
+            <h3>Make noise</h3>
+            <p>Star the repos, share the site, and tell your CFO what you're paying per seat.</p>
+          </div>
+        </div>
+
+        <div class="join__ctas">
+          <a class="btn btn--red" href="https://github.com/occupysaas">Join on GitHub</a>
+          <a class="btn btn--ghost" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20">Propose a target</a>
+        </div>
+      </div>
+      <div class="join__crowd" role="presentation"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="kicker">Questions</span>
+          <h2>Fair <span class="brush">questions.</span></h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is this legal?</summary>
+            <div>
+              <p>Clean-room reimplementation is a long-established way to build compatible software: you work only from
+              public information and independently write your own code. Interoperating with an API is not the same as
+              copying a product. Each project publishes its clean-room policy and source provenance so anyone can check
+              the work. This page isn't legal advice; if you're adopting a project for a business, talk to your own counsel.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Are you affiliated with Auth0, Okta or Salesforce?</summary>
+            <div>
+              <p>No. OccupySaaS and its projects are independent and not affiliated with, endorsed by, or sponsored by
+              any vendor named on this site. Product names are used only to describe compatibility.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can former employees of those companies contribute?</summary>
+            <div>
+              <p>Yes, but never with confidential knowledge from a former employer. Contributors work only from public
+              material, and anyone with relevant inside knowledge should stay on the public-spec side of the firewall
+              or sit that project out. When in doubt, read the project's <code>CLEAN_ROOM.md</code> and ask first.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Why use AI to build it?</summary>
+            <div>
+              <p>Because the giants had thousands of engineers and we have a movement. AI agents let a small group turn a
+              precise spec into working code quickly. Humans write the specs, review every change, and own the result,
+              and compatibility tests against real SDKs decide what counts as done.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is it production-ready?</summary>
+            <div>
+              <p>Not yet. Both first projects are early and say so plainly in their READMEs, along with exactly which
+              features work today. Try them, break them, and file issues.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What does it cost?</summary>
+            <div>
+              <p>Nothing. Every project is released under the Apache License 2.0. Run it, fork it, sell services around it.
+              The only thing we ask is that you contribute back what you can.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><img src="assets/img/favicon.svg" alt="" width="36" height="36">Occupy<span class="red">SaaS</span></div>
+          <p>A movement for the laid-off developers of the world: clean-room, open-source rebuilds of the software that runs everything.</p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="https://github.com/occupysaas/zeroauthy">ZeroAuthy</a></li>
+            <li><a href="https://github.com/occupysaas/salescompel">SalesCompel</a></li>
+            <li><a href="https://github.com/occupysaas">All repositories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Movement</h4>
+          <ul>
+            <li><a href="#method">Clean-room method</a></li>
+            <li><a href="#next">Occupation map</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street (Wikipedia)</a></li>
+            <li><a href="https://github.com/occupysaas/website">Edit this site</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">
+        Auth0 and Okta are trademarks of Okta, Inc. Salesforce is a trademark of Salesforce, Inc. All other trademarks
+        belong to their respective owners. OccupySaaS is not affiliated with, endorsed by, or sponsored by any of them;
+        names are used only to describe compatibility. Site content licensed under Apache-2.0.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
