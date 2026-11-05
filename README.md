@@ -7,7 +7,7 @@ Plain static HTML/CSS/JS, no build step.
 ```
 index.html            the page
 assets/css/site.css   styles (black / white / protest red)
-assets/js/site.js     mobile nav + scroll reveal
+assets/js/site.js     mobile nav, GitHub star counts + scroll reveal
 assets/img/           logo, crowd silhouette, favicon, social card
 ```
 

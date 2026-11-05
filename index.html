@@ -78,6 +78,9 @@
             <a class="btn btn--red" href="#projects">See the first releases</a>
             <a class="btn btn--ghost" href="#join">Join the occupation</a>
           </div>
+          <p class="hero__news">
+            <strong>New:</strong> <a href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">ZeroAuthy v1.0.0-rc.1 is out</a>
+          </p>
         </div>
         <div class="hero__logo">
           <img src="assets/img/logo.png" alt="OccupySaaS logo: a raised fist holds a laptop showing a code symbol above a crowd of protesters with placards, in front of SaaS company skyscrapers. Below, OCCUPY in red brush letters and SAAS in black." width="1000" height="1000" fetchpriority="high">
@@ -200,38 +203,50 @@
           <h2>Two towers<br><span class="brush">occupied.</span></h2>
           <p class="lede">
             Identity and CRM: the two subscriptions almost every company pays for and almost nobody loves.
-            Both are early, both are public, and both welcome contributors today.
+            ZeroAuthy has shipped its first release candidate, SalesCompel is still early, and both welcome contributors today.
           </p>
         </div>
 
         <div class="projects">
           <article class="project reveal">
             <div class="project__top">
-              <span class="badge">Early · in the open</span>
+              <span class="badge">Release candidate · v1.0.0-rc.1</span>
               <span>Go</span>
             </div>
             <div class="project__body">
               <h3 class="project__name">Zero<span class="red">Authy</span></h3>
               <div class="project__vs">Replaces <s>Auth0</s></div>
               <p>
-                A self-hostable identity server that speaks the Auth0 Authentication API. Point an existing Auth0 SDK at
-                a ZeroAuthy tenant domain and it works with no code changes.
+                A self-hostable identity server that speaks the Auth0 APIs. Point an existing Auth0 SDK at a ZeroAuthy
+                tenant domain and log in. The first release candidate is an early preview that covers what most Auth0
+                tenants use.
               </p>
               <ul class="checks">
-                <li>OIDC discovery, JWKS &amp; multi-tenant domains</li>
-                <li>Hosted login, authorization code + PKCE</li>
-                <li><code>client_credentials</code>, rotating refresh tokens, revoke &amp; logout</li>
-                <li>Verified with auth0-spa-js, auth0-react &amp; nextjs-auth0</li>
+                <li>Authentication API, hosted login, MFA &amp; passwordless</li>
+                <li>Management API &amp; admin console</li>
+                <li>OpenID Certified: Basic, Config &amp; Form Post OP</li>
+                <li>Tested with node-auth0, the Auth0 CLI &amp; Deploy CLI, auth0-react, nextjs-auth0 &amp; more</li>
               </ul>
-<pre class="term"><span class="c"># build &amp; run</span>
-<span class="p">$ </span>go build -o bin/zeroauthy ./cmd/zeroauthy
-<span class="p">$ </span>./bin/zeroauthy serve --config config.yaml
-<span class="p">$ </span>curl https://localhost:8443/.well-known/openid-configuration</pre>
+              <p class="project__gaps">
+                <strong>Not in this release:</strong> WebAuthn, passkeys, SAML, WS-Federation, enterprise directories, CIBA, JAR and token exchange.
+                <a href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compatibility.md">Full compatibility notes</a>
+              </p>
+<pre class="term"><span class="c"># try the release candidate (self-signed TLS, for testing only)</span>
+<span class="p">$ </span>docker run -d --name zeroauthy -p 8443:8443 \
+  -v zeroauthy-data:/data \
+  -e ZEROAUTHY_SERVER__LISTEN=:8443 \
+  -e ZEROAUTHY_SERVER__SYSTEM_HOST=localhost:8443 \
+  -e ZEROAUTHY_SERVER__TLS_SELF_SIGNED=true \
+  -e ZEROAUTHY_SERVER__TLS_SELF_SIGNED_CA_FILE=/data/ca.pem \
+  -e ZEROAUTHY_SECURITY__MASTER_KEY="$(openssl rand -base64 32)" \
+  -e ZEROAUTHY_BOOTSTRAP__ADMIN_EMAIL=you@example.com \
+  ghcr.io/occupysaas/zeroauthy:1.0.0-rc.1</pre>
               <div class="tags">
                 <span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">gRPC plugins</span><span class="tag">Apache-2.0</span>
               </div>
               <div class="project__foot">
-                <a class="btn" href="https://github.com/occupysaas/zeroauthy">View on GitHub</a>
+                <a class="btn btn--red" href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">Get v1.0.0-rc.1</a>
+                <a class="btn" href="https://github.com/occupysaas/zeroauthy">View on GitHub <span class="stars"><span aria-hidden="true">★</span> <span data-stars="zeroauthy">313</span> stars</span></a>
                 <a class="btn btn--ghost" href="https://github.com/occupysaas/zeroauthy/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
               </div>
             </div>
@@ -262,12 +277,21 @@
                 <span class="tag">PostgreSQL</span><span class="tag">Multi-tenant</span><span class="tag">REST</span><span class="tag">i18n</span><span class="tag">Apache-2.0</span>
               </div>
               <div class="project__foot">
-                <a class="btn" href="https://github.com/occupysaas/salescompel">View on GitHub</a>
+                <a class="btn" href="https://github.com/occupysaas/salescompel">View on GitHub <span class="stars"><span aria-hidden="true">★</span> <span data-stars="salescompel">270</span> stars</span></a>
                 <a class="btn btn--ghost" href="https://github.com/occupysaas/salescompel/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
               </div>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- MOTTO -->
+    <section class="section motto" id="motto">
+      <div class="wrap">
+        <span class="kicker">Our motto</span>
+        <h2><span class="motto__line">You will own</span> <span class="motto__line">everything</span> <span class="motto__line">and be <span class="brush">happy!</span></span></h2>
+        <p class="lede">Your code, your data, your servers. No seats to count, no renewals to dread, and nobody who can switch it off but you.</p>
       </div>
     </section>
 
@@ -376,10 +400,15 @@
             <strong>ZeroAuthy goes public</strong>
             <p>The first clean-room rebuild opens its repo under Apache-2.0.</p>
           </li>
-          <li class="now">
+          <li>
             <time datetime="2026-10-15">15 Oct 2026</time>
             <strong>SalesCompel joins the occupation</strong>
             <p>The second tower. More to come &mdash; decided in the open.</p>
+          </li>
+          <li class="now">
+            <time datetime="2026-11-04">4 Nov 2026</time>
+            <strong>ZeroAuthy v1.0.0-rc.1</strong>
+            <p>The first release candidate: binaries and a container image anyone can run today.</p>
           </li>
         </ol>
       </div>
@@ -490,8 +519,10 @@
           <details>
             <summary>Is it production-ready?</summary>
             <div>
-              <p>Not yet. Both first projects are early and say so plainly in their READMEs, along with exactly which
-              features work today. Try them, break them, and file issues.</p>
+              <p>Not yet. ZeroAuthy's first release candidate, v1.0.0-rc.1, is an early preview, and its
+              <a href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compat/matrix.md">compatibility matrix</a>
+              lists the gaps. SalesCompel is earlier still, and its README says exactly which features work today.
+              Try them, break them, and file issues.</p>
             </div>
           </details>
           <details>
