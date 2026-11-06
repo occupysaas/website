@@ -372,7 +372,7 @@ p { margin: 0 0 1em; }
 .motto .brush { color: var(--ink); }
 .motto .kicker { color: var(--white); border-color: var(--white); }
 .motto .lede { color: var(--white); margin: 0 auto; }
-.motto__video { max-width: 960px; margin: 2.5rem auto 0; aspect-ratio: 16 / 9; border: 4px solid var(--ink); background: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+.motto__video { width: min(1920px, 100vw - 2 * var(--gutter)); position: relative; left: 50%; transform: translateX(-50%); margin: 2.5rem 0 0; aspect-ratio: 16 / 9; border: 4px solid var(--ink); background: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
 .motto__video iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 @media (max-width: 920px) { .projects { grid-template-columns: minmax(0, 1fr); } }
