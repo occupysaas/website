@@ -1,4 +1,5 @@
 # occupysaas.com
+Reclaiming the software ecosystem, one open-source project at a time.
 
 The public site for **OccupySaaS** — clean-room, open-source, drop-in replacements for the SaaS giants.
 
