@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://occupysaas.com/sitemap.xml

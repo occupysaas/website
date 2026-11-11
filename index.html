@@ -3,234 +3,517 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OccupySaaS — They laid us off. We're rebuilding their SaaS.</title>
-  <meta name="description" content="OccupySaaS is a protest movement in code: laid-off developers building clean-room, open-source, drop-in replacements for the SaaS giants. First up: ZeroAuthy (Auth0) and SalesCompel (Salesforce).">
+
+  <title>OccupySaaS: Open-source replacements for the SaaS giants</title>
+  <meta name="description" content="OccupySaaS builds clean-room, open-source, drop-in replacements for the SaaS giants. Apache-2.0, self-hosted, and free of per-seat pricing.">
   <link rel="canonical" href="https://occupysaas.com/">
-  <meta property="og:url" content="https://occupysaas.com/">
-  <meta name="theme-color" content="#111111">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="OccupySaaS">
+  <meta name="application-name" content="OccupySaaS">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OccupySaaS — They laid us off. We're rebuilding their SaaS.">
+  <meta property="og:site_name" content="OccupySaaS">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://occupysaas.com/">
+  <meta property="og:title" content="OccupySaaS: Open-source replacements for the SaaS giants">
   <meta property="og:description" content="Clean-room, AI-assisted, open-source, drop-in replacements for the SaaS giants. Apache-2.0. Self-hosted. No per-seat tax.">
   <meta property="og:image" content="https://occupysaas.com/assets/img/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OccupySaaS: a raised fist holds a laptop above a crowd of protesters and SaaS skyscrapers.">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OccupySaaS: Open-source replacements for the SaaS giants">
+  <meta name="twitter:description" content="Clean-room, AI-assisted, open-source, drop-in replacements for the SaaS giants. Apache-2.0. Self-hosted. No per-seat tax.">
+  <meta name="twitter:image" content="https://occupysaas.com/assets/img/og.jpg">
+  <meta name="twitter:image:alt" content="OccupySaaS: a raised fist holds a laptop above a crowd of protesters and SaaS skyscrapers.">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261105b">
-  <script>document.documentElement.classList.add("js")</script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261111c">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var stored = localStorage.getItem("theme");
+        if (stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          root.classList.add("dark");
+        }
+      } catch (error) {}
+      root.classList.add("js");
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://occupysaas.com/#organization",
+        "name": "OccupySaaS",
+        "url": "https://occupysaas.com/",
+        "description": "A protest movement in code building clean-room, open-source, drop-in replacements for the SaaS giants.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://occupysaas.com/assets/img/logo.png",
+          "width": 1000,
+          "height": 1000
+        },
+        "sameAs": [
+          "https://github.com/occupysaas",
+          "https://discord.gg/zwP8aP65R"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://occupysaas.com/#website",
+        "url": "https://occupysaas.com/",
+        "name": "OccupySaaS",
+        "description": "Clean-room, open-source, drop-in replacements for the SaaS giants.",
+        "publisher": { "@id": "https://occupysaas.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "ItemList",
+        "name": "OccupySaaS projects",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "ZeroAuthy",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Linux, macOS, Windows",
+              "description": "A self-hostable identity server compatible with the Auth0 APIs.",
+              "url": "https://github.com/occupysaas/zeroauthy",
+              "license": "https://www.apache.org/licenses/LICENSE-2.0",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "SalesCompel",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Linux, macOS, Windows",
+              "description": "A free, open-source Salesforce replacement with a multi-tenant Go and PostgreSQL core.",
+              "url": "https://github.com/occupysaas/salescompel",
+              "license": "https://www.apache.org/licenses/LICENSE-2.0",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clean-room reimplementation is a long-established way to build compatible software: you work only from public information and independently write your own code. Interoperating with an API is not the same as copying a product. Each project publishes its clean-room policy and source provenance so anyone can check the work. This page is not legal advice. If you are adopting a project for a business, talk to your own counsel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you affiliated with Auth0, Okta or Salesforce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. OccupySaaS and its projects are independent and not affiliated with, endorsed by, or sponsored by any vendor named on this site. Product names are used only to describe compatibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can former employees of those companies contribute?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but never with confidential knowledge from a former employer. Contributors work only from public material, and anyone with relevant inside knowledge should stay on the public-spec side of the firewall or sit that project out. When in doubt, read the project's CLEAN_ROOM.md and ask first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why use AI to build it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because the giants had thousands of engineers and we have a movement. AI agents let a small group turn a precise spec into working code quickly. Humans write the specs, review every change, and own the result, and compatibility tests against real SDKs decide what counts as done."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why Go?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Portability. A Go project compiles to a single self-contained binary, so self-hosting means dropping one file onto a server or into a Docker or Podman image. No installer, no runtime to set up, no tree of shared libraries to keep in sync. The same toolchain cross-compiles for Linux, macOS, Windows, x86 and ARM, and the result fits in a minimal container image."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why not Rust?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nothing is wrong with Rust, and we are not against it. Go was picked for the first projects because it makes the one-file, container-friendly drop-in the default with very little build setup. Rust recreations are welcome. They just have not been made yet. The specs, API contracts and compatibility tests are language-neutral, so a Rust port can be checked against the same SDKs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it production-ready?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not yet. ZeroAuthy's first release candidate, v1.0.0-rc.1, is an early preview, and its compatibility matrix lists the gaps. SalesCompel is earlier still, and its README says exactly which features work today. Try them, break them, and file issues."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nothing. Every project is released under the Apache License 2.0. Run it, fork it, sell services around it. The only thing we ask is that you contribute back what you can."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip absolute left-4 top-4 z-[100] -translate-y-24 rounded-md bg-ink px-4 py-2 text-sm font-semibold text-paper transition focus:translate-y-0" href="#main">Skip to content</a>
 
-  <!-- roughens edges of the red display words so they read like brush paint -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <filter id="rough">
-      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="4"/>
-      <feDisplacementMap in="SourceGraphic" scale="4"/>
-    </filter>
-  </svg>
+  <header class="sticky top-0 z-50">
+    <div class="mx-auto w-full max-w-[1240px] px-4 pt-3 sm:px-6">
+      <nav class="relative mx-auto flex h-14 w-full items-center justify-between gap-2 rounded-full border border-line bg-surface/90 px-2 backdrop-blur-md lg:w-fit lg:gap-3 lg:px-2.5" aria-label="Main navigation">
+        <a class="flex shrink-0 items-center gap-2.5 rounded-full py-1 pl-2 pr-1" href="#top" aria-label="OccupySaaS home">
+          <img src="assets/img/favicon.svg" alt="" width="32" height="32" class="h-8 w-8 rounded-md">
+          <span class="text-[17px] font-black tracking-tight text-ink">Occupy<span class="text-brand">SaaS</span></span>
+        </a>
 
-  <header class="nav">
-    <div class="wrap nav__inner">
-      <a class="nav__brand" href="#top" aria-label="OccupySaaS home">
-        <img src="assets/img/favicon.svg" alt="" width="34" height="34">
-        <span>Occupy<span class="red">SaaS</span></span>
-      </a>
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span></button>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#why">Why</a></li>
-        <li><a href="#method">Method</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#next">Next</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://discord.gg/zwP8aP65R">Discord</a></li>
-        <li><a class="btn" href="https://github.com/occupysaas">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub</a></li>
-      </ul>
+        <ul class="hidden items-center gap-0.5 lg:flex">
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="#why">Why</a></li>
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="#method">Method</a></li>
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="#projects">Projects</a></li>
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="#next">Next</a></li>
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="#faq">FAQ</a></li>
+          <li><a class="rounded-full px-3 py-2 text-sm font-medium text-ink-2 transition hover:bg-surface-2 hover:text-ink" href="https://discord.gg/zwP8aP65R">Discord</a></li>
+        </ul>
+
+        <div class="flex shrink-0 items-center gap-1.5">
+          <button type="button" data-theme-toggle class="grid h-9 w-9 place-items-center rounded-full border border-line text-ink-2 transition hover:bg-surface-2 hover:text-ink" aria-label="Switch to dark theme" aria-pressed="false">
+            <i class="fa-solid fa-moon theme-icon-moon" aria-hidden="true"></i>
+            <i class="fa-solid fa-sun theme-icon-sun" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-primary btn-sm hidden sm:inline-flex" href="https://github.com/occupysaas">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <button type="button" data-nav-toggle class="grid h-9 w-9 place-items-center rounded-full border border-line text-ink-2 transition hover:bg-surface-2 hover:text-ink lg:hidden" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-nav" class="mx-auto mt-2 hidden w-full rounded-2xl border border-line bg-surface/95 p-2 backdrop-blur-md lg:hidden">
+        <ul class="grid">
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="#why">Why <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="#method">Method <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="#projects">Projects <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="#next">Next <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="#faq">FAQ <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li><a class="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-ink-2 hover:bg-surface-2 hover:text-ink" href="https://discord.gg/zwP8aP65R">Discord <i class="fa-solid fa-arrow-right text-xs text-muted" aria-hidden="true"></i></a></li>
+          <li class="mt-1"><a class="btn btn-primary w-full" href="https://github.com/occupysaas"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="wrap hero__grid">
+    <section id="top" class="section-screen relative overflow-hidden">
+      <div class="wrap grid items-center gap-10 pb-12 pt-10 sm:gap-12 sm:pb-16 sm:pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:pt-16">
         <div>
-          <span class="kicker">Est. October 2026 · Apache-2.0</span>
-          <h1>
-            <span class="line">They laid</span>
-            <span class="line">us off.</span>
-            <span class="line brush">We're rebuilding</span>
-            <span class="line">their SaaS.</span>
+          <h1 class="display hero-title h1 text-ink">
+            <span class="block">They laid us off.</span>
+            <span class="block text-brand">We're rebuilding<br>their SaaS.</span>
           </h1>
-          <p class="lede">
+          <p class="mt-5 max-w-[54ch] text-lg leading-8 text-ink-2 sm:text-xl">
             OccupySaaS is a protest movement written in code. Laid-off engineers, armed with AI and public documentation,
-            are building <strong>clean-room, open-source, drop-in replacements</strong> for the platforms that
-            rent our own industry back to us &mdash; one seat at a time.
+            are building <strong class="font-semibold text-ink">clean-room, open-source, drop-in replacements</strong>
+            for the platforms that rent our own industry back to us, one seat at a time.
           </p>
-          <div class="hero__ctas">
-            <a class="btn btn--red" href="#projects">See the first releases</a>
-            <a class="btn btn--ghost" href="#join">Join the occupation</a>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="#projects">See the first releases <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></a>
+            <a class="btn btn-secondary" href="#join">Join the occupation</a>
           </div>
-          <p class="hero__news">
-            <strong>New:</strong> <a href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">ZeroAuthy v1.0.0-rc.1 is out</a>
+          <p class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-muted">
+            <span class="inline-flex items-center gap-1.5 text-brand"><i class="fa-solid fa-rocket" aria-hidden="true"></i> New</span>
+            <a class="font-medium text-ink underline decoration-brand/40 underline-offset-4 hover:decoration-brand" href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">ZeroAuthy v1.0.0-rc.1 is out</a>
           </p>
+          <p class="mt-3 font-mono text-xs tracking-[0.16em] text-muted">EST. OCTOBER 2026 / APACHE-2.0</p>
         </div>
-        <div class="hero__logo">
-          <img src="assets/img/logo.png" alt="OccupySaaS logo: a raised fist holds a laptop showing a code symbol above a crowd of protesters with placards, in front of SaaS company skyscrapers. Below, OCCUPY in red brush letters and SAAS in black." width="1000" height="1000" fetchpriority="high">
-          <div class="hero__stamp">We are the<br>1,000,000</div>
+
+        <div class="relative mx-auto w-full max-w-[520px] lg:max-w-none">
+          <div class="rounded-xl bg-[#f4f1ea] p-4 sm:p-6">
+            <img src="assets/img/logo.png" alt="A raised fist holds a laptop above a crowd of protesters and SaaS skyscrapers. The OccupySaaS wordmark sits below." width="1000" height="1000" fetchpriority="high" decoding="async" class="h-auto w-full rounded-lg">
+          </div>
+          <div class="absolute -bottom-5 left-5 rotate-[-4deg] rounded-lg border border-[#121215]/10 bg-brand-solid px-4 py-3 text-white sm:left-8">
+            <span class="block font-mono text-[10px] uppercase tracking-[0.18em]">We are the</span>
+            <span class="display block text-2xl">1,000,000</span>
+          </div>
         </div>
       </div>
-      <div class="hero__crowd" role="presentation"></div>
+      <div class="crowd h-16 opacity-20 sm:h-24 dark:invert dark:opacity-25" aria-hidden="true"></div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Open source</span><span>Clean room</span><span>Drop-in compatible</span><span>Self-hosted</span>
-        <span>No per-seat tax</span><span>Your data, your servers</span><span>Fork the 1%</span><span>Spec, not stolen code</span>
-        <span>Open source</span><span>Clean room</span><span>Drop-in compatible</span><span>Self-hosted</span>
-        <span>No per-seat tax</span><span>Your data, your servers</span><span>Fork the 1%</span><span>Spec, not stolen code</span>
+    <div aria-label="Principles" class="bg-surface">
+      <div class="wrap">
+        <ul class="grid gap-5 py-5 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-code mt-0.5 text-brand" aria-hidden="true"></i>
+            <div>
+              <p class="text-sm font-semibold text-ink">Open source</p>
+              <p class="mt-0.5 text-xs leading-5 text-muted">Apache-2.0, forkable by anyone</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-shield-halved mt-0.5 text-brand" aria-hidden="true"></i>
+            <div>
+              <p class="text-sm font-semibold text-ink">Clean room</p>
+              <p class="mt-0.5 text-xs leading-5 text-muted">Built from public docs only</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-plug-circle-check mt-0.5 text-brand" aria-hidden="true"></i>
+            <div>
+              <p class="text-sm font-semibold text-ink">Drop-in compatible</p>
+              <p class="mt-0.5 text-xs leading-5 text-muted">Your existing SDKs keep working</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-server mt-0.5 text-brand" aria-hidden="true"></i>
+            <div>
+              <p class="text-sm font-semibold text-ink">Self-hosted</p>
+              <p class="mt-0.5 text-xs leading-5 text-muted">Your data stays on your servers</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- WHY -->
-    <section class="section" id="why">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <span class="kicker">The grievances</span>
-          <h2>The software built<br>by the 99% <span class="brush">belongs</span><br>to the 99%.</h2>
-          <p class="lede">
-            In 2011, Occupy Wall Street asked who the economy was really working for. In 2026 we're asking the same
-            question about the cloud. The tools every company runs on are now toll booths &mdash; and the
-            people who built them were shown the door.
+    <section id="why" class="section-screen wrap py-16 sm:py-24">
+      <div class="reveal max-w-3xl">
+        <h2 class="display h2 text-ink">
+          The software built by the 99% <span class="text-brand">belongs</span> to the 99%.
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-ink-2">
+          In 2011, Occupy Wall Street asked who the economy was really working for. In 2026 we are asking the same question
+          about the cloud. The tools every company runs on are now toll booths, and the people who built them were shown the door.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-6">
+        <article class="card reveal flex flex-col justify-between p-6 sm:p-7 md:col-span-3">
+          <img src="assets/img/why/pricing.svg" alt="" width="480" height="180" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+          <div>
+            <p class="font-mono text-xs font-medium text-brand">Pricing</p>
+            <h3 class="display h3 mt-4 text-ink">Per-seat pricing is a tax on growth.</h3>
+          </div>
+          <p class="mt-4 text-base leading-7 text-ink-2">
+            Every hire, every intern, every contractor, another line item. Infrastructure should not charge rent by the head.
+          </p>
+        </article>
+
+        <article class="card reveal flex flex-col justify-between p-6 sm:p-7 md:col-span-3">
+          <img src="assets/img/why/lockin.svg" alt="" width="480" height="180" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+          <div>
+            <p class="font-mono text-xs font-medium text-brand">Lock-in</p>
+            <h3 class="display h3 mt-4 text-ink">Lock-in is not a feature.</h3>
+          </div>
+          <p class="mt-4 text-base leading-7 text-ink-2">
+            Proprietary APIs, export walls and surprise price hikes keep customers captive. Compatible open alternatives set them free.
+          </p>
+        </article>
+
+        <article class="card reveal p-6 sm:p-7 md:col-span-6">
+          <img src="assets/img/why/labour-mobile.svg" alt="" width="480" height="240" loading="lazy" decoding="async" class="mb-6 h-auto w-full sm:hidden">
+          <img src="assets/img/why/labour.svg" alt="" width="960" height="180" loading="lazy" decoding="async" class="mb-6 hidden h-auto w-full sm:block">
+          <div class="grid gap-4 sm:grid-cols-[1fr_1.15fr] sm:items-center sm:gap-6">
+            <div>
+              <p class="font-mono text-xs font-medium text-brand">Labour</p>
+              <h3 class="display h3 mt-4 text-ink">They cut us. We commit.</h3>
+            </div>
+            <p class="text-base leading-7 text-ink-2">
+              A million engineers were let go while the platforms kept growing. We still know how to ship. Now we ship it in the open.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="method" class="section-screen bg-surface">
+      <div class="wrap py-16 sm:py-24">
+        <div class="reveal max-w-3xl">
+          <h2 class="display h2 text-ink">
+            Clean room. AI rebuild. <span class="text-brand">Drop-in.</span>
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-ink-2">
+            We do not leak, decompile or copy anyone's code. Every project is rebuilt from public documentation and open standards,
+            with AI doing the heavy lifting on the build side of a strict firewall, then proven compatible against the vendors'
+            own public SDKs.
           </p>
         </div>
 
-        <div class="signs">
-          <article class="sign reveal">
-            <div class="sign__board">
-              <div class="sign__slogan">Per-seat pricing is a <em>tax</em> on growth</div>
-              <p>Every hire, every intern, every contractor &mdash; another line item. Infrastructure shouldn't charge rent by the head.</p>
-            </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-6">
+          <article class="card reveal p-6 sm:p-7 md:col-span-3">
+            <img src="assets/img/bento/record.svg" alt="" width="480" height="210" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+            <h3 class="flex items-center gap-2.5 text-xl font-bold text-ink">
+              <i class="fa-solid fa-book-open text-brand" aria-hidden="true"></i> Read the public record
+            </h3>
+            <p class="mt-3 text-base leading-7 text-ink-2">
+              Public API references, open standards like OAuth 2.0 and OIDC, and published SDK behaviour become a written
+              specification. Nothing confidential, nothing leaked, nothing from former employers.
+            </p>
           </article>
-          <article class="sign reveal">
-            <div class="sign__board">
-              <div class="sign__slogan">Lock-in is not a <em>feature</em></div>
-              <p>Proprietary APIs, export walls and surprise price hikes keep customers captive. Compatible open alternatives set them free.</p>
-            </div>
+
+          <article class="card reveal p-6 sm:p-7 md:col-span-3">
+            <img src="assets/img/bento/firewall.svg" alt="" width="480" height="210" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+            <h3 class="flex items-center gap-2.5 text-xl font-bold text-ink">
+              <i class="fa-solid fa-shield-halved text-brand" aria-hidden="true"></i> Raise the firewall
+            </h3>
+            <p class="mt-3 text-base leading-7 text-ink-2">
+              Spec writers and builders stay separated. Each repo carries a <code class="rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.85em] text-ink">CLEAN_ROOM.md</code>
+              policy, and provenance is recorded for every fixture and reference.
+            </p>
           </article>
-          <article class="sign reveal">
-            <div class="sign__board">
-              <div class="sign__slogan">They cut us. We <em>commit</em>.</div>
-              <p>A million engineers were let go while the platforms kept growing. We still know how to ship. Now we ship it in the open.</p>
+
+          <article class="card reveal p-6 sm:p-7 md:col-span-2">
+            <img src="assets/img/bento/ai.svg" alt="" width="480" height="210" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+            <h3 class="flex items-center gap-2.5 text-xl font-bold text-ink">
+              <i class="fa-solid fa-robot text-brand" aria-hidden="true"></i> Rebuild with AI
+            </h3>
+            <p class="mt-3 text-base leading-7 text-ink-2">
+              AI agents implement from the spec alone, contracts first (<code class="rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.85em] text-ink">openapi.yaml</code>),
+              then code, then tests, under human review at every merge.
+            </p>
+          </article>
+
+          <article class="card reveal p-6 sm:p-7 md:col-span-2">
+            <img src="assets/img/bento/compatibility.svg" alt="" width="480" height="210" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+            <h3 class="flex items-center gap-2.5 text-xl font-bold text-ink">
+              <i class="fa-solid fa-flask-vial text-brand" aria-hidden="true"></i> Prove compatibility
+            </h3>
+            <p class="mt-3 text-base leading-7 text-ink-2">
+              A compatibility laboratory runs the vendors' own public client SDKs against our server. If your existing code
+              does not work unchanged, it is not done.
+            </p>
+          </article>
+
+          <article class="card reveal p-6 sm:p-7 md:col-span-2">
+            <img src="assets/img/bento/release.svg" alt="" width="480" height="210" loading="lazy" decoding="async" class="mb-5 h-auto w-full rounded-lg bg-paper p-3">
+            <h3 class="flex items-center gap-2.5 text-xl font-bold text-ink">
+              <i class="fa-solid fa-box-open text-brand" aria-hidden="true"></i> Release it to everyone
+            </h3>
+            <p class="mt-3 text-base leading-7 text-ink-2">
+              Apache-2.0. Self-hostable. Pluggable storage. No telemetry you did not ask for, and no seat counter.
+            </p>
+          </article>
+
+          <article class="card reveal overflow-hidden md:col-span-6">
+            <div class="border-b border-line px-6 py-4 sm:px-7 sm:py-5">
+              <h3 class="h4 flex items-center gap-2.5 font-bold text-ink">
+                <i class="fa-solid fa-scale-balanced text-brand" aria-hidden="true"></i> The clean-room firewall
+              </h3>
+              <p class="mt-1 text-sm text-muted">What crosses the line, and what never does.</p>
+            </div>
+            <div class="grid md:grid-cols-[1fr_auto_1fr]">
+              <div class="p-6 sm:p-7">
+                <p class="font-semibold text-ink">Allowed in</p>
+                <ul class="mt-4 grid gap-2.5 text-sm text-ink-2">
+                  <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Public API docs</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Open standards and RFCs</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Public SDK behaviour</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Black-box test results</li>
+                </ul>
+              </div>
+              <div class="grid place-items-center bg-brand-solid px-4 py-5 md:px-5">
+                <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-white md:[writing-mode:vertical-rl]">Clean room</span>
+              </div>
+              <div class="p-6 sm:p-7">
+                <p class="font-semibold text-ink">Never allowed</p>
+                <ul class="mt-4 grid gap-2.5 text-sm text-ink-2">
+                  <li class="flex gap-2.5"><i class="fa-solid fa-xmark mt-0.5 text-muted" aria-hidden="true"></i> Leaked or proprietary source</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-xmark mt-0.5 text-muted" aria-hidden="true"></i> Decompiled binaries</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-xmark mt-0.5 text-muted" aria-hidden="true"></i> Former-employer confidential info</li>
+                  <li class="flex gap-2.5"><i class="fa-solid fa-xmark mt-0.5 text-muted" aria-hidden="true"></i> Copied UI assets or trademarks</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- METHOD -->
-    <section class="section section--dark" id="method">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <span class="kicker">The method</span>
-          <h2>Clean room.<br><span class="brush">AI rebuild.</span><br>Drop-in.</h2>
-          <p class="lede">
-            We don't leak, decompile or copy anyone's code. Every project is rebuilt from public documentation and
-            open standards, with AI doing the heavy lifting on the build side of a strict firewall &mdash; then
-            proven compatible against the vendors' own public SDKs.
-          </p>
-        </div>
-
-        <ol class="steps">
-          <li class="step reveal">
-            <h3>Read the public record</h3>
-            <p>Public API references, open standards (OAuth 2.0, OIDC, REST) and published SDK behaviour become a written specification. Nothing confidential, nothing leaked, nothing from former employers.</p>
-          </li>
-          <li class="step reveal">
-            <h3>Raise the firewall</h3>
-            <p>Spec writers and builders stay separated. Each repo carries a <code>CLEAN_ROOM.md</code> policy, and provenance is recorded for every fixture and reference.</p>
-          </li>
-          <li class="step reveal">
-            <h3>Rebuild with AI</h3>
-            <p>AI agents implement from the spec alone &mdash; contracts first (<code>openapi.yaml</code>), then code, then tests &mdash; under human review at every merge.</p>
-          </li>
-          <li class="step reveal">
-            <h3>Prove compatibility</h3>
-            <p>A compatibility laboratory runs the vendors' own public client SDKs against our server. If your existing code doesn't work unchanged, it isn't done.</p>
-          </li>
-          <li class="step reveal">
-            <h3>Release it to everyone</h3>
-            <p>Apache-2.0. Self-hostable. Pluggable storage. No telemetry you didn't ask for, and no seat counter.</p>
-          </li>
-        </ol>
-
-        <div class="firewall reveal" aria-label="Clean-room firewall diagram">
-          <div class="firewall__side">
-            <h4>Allowed in &rarr;</h4>
-            <ul>
-              <li>Public API docs</li>
-              <li>Open standards &amp; RFCs</li>
-              <li>Public SDK behaviour</li>
-              <li>Black-box test results</li>
-            </ul>
-          </div>
-          <div class="firewall__wall"><span>Clean room</span></div>
-          <div class="firewall__side">
-            <h4>&times; Never allowed</h4>
-            <ul>
-              <li>Leaked or proprietary source</li>
-              <li>Decompiled binaries</li>
-              <li>Former-employer confidential info</li>
-              <li>Copied UI assets or trademarks</li>
-            </ul>
-          </div>
-        </div>
+    <section id="projects" class="section-screen wrap py-16 sm:py-24">
+      <div class="reveal max-w-3xl">
+        <h2 class="display h2 text-ink">
+          Two towers <span class="text-brand">occupied.</span>
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-ink-2">
+          Identity and CRM: the two subscriptions almost every company pays for and almost nobody loves. ZeroAuthy has shipped
+          its first release candidate, SalesCompel is still early, and both welcome contributors today.
+        </p>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <span class="kicker">First releases</span>
-          <h2>Two towers<br><span class="brush">occupied.</span></h2>
-          <p class="lede">
-            Identity and CRM: the two subscriptions almost every company pays for and almost nobody loves.
-            ZeroAuthy has shipped its first release candidate, SalesCompel is still early, and both welcome contributors today.
-          </p>
-        </div>
-
-        <div class="projects">
-          <article class="project reveal">
-            <div class="project__top">
-              <span class="badge">Release candidate · v1.0.0-rc.1</span>
-              <span>Go</span>
-            </div>
-            <div class="project__body">
-              <h3 class="project__name">Zero<span class="red">Authy</span></h3>
-              <div class="project__vs">Replaces <s>Auth0</s></div>
-              <p>
-                A self-hostable identity server that speaks the Auth0 APIs. Point an existing Auth0 SDK at a ZeroAuthy
-                tenant domain and log in. The first release candidate is an early preview that covers what most Auth0
-                tenants use.
+      <div class="mt-10 grid gap-4">
+        <article class="card reveal">
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_13rem] lg:items-start">
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                <span class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold text-brand">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Release candidate
+                </span>
+                <span class="font-mono text-[11px] text-muted">Go</span>
+                <span class="font-mono text-[11px] text-muted">Replaces <s class="text-ink-2 decoration-brand decoration-2">Auth0</s></span>
+              </div>
+              <h3 class="display h3 mt-2 text-ink">Zero<span class="text-brand">Authy</span></h3>
+              <p class="mt-2 max-w-3xl text-sm leading-6 text-ink-2">
+                A self-hostable identity server that speaks the Auth0 APIs. Point an existing Auth0 SDK at a ZeroAuthy tenant
+                domain and log in.
               </p>
-              <ul class="checks">
-                <li>Authentication API, hosted login, MFA &amp; passwordless</li>
-                <li>Management API &amp; admin console</li>
-                <li>OpenID Certified: Basic, Config &amp; Form Post OP</li>
-                <li>Tested with node-auth0, the Auth0 CLI &amp; Deploy CLI, auth0-react, nextjs-auth0 &amp; more</li>
-              </ul>
-              <p class="project__gaps">
-                <strong>Not in this release:</strong> WebAuthn, passkeys, SAML, WS-Federation, enterprise directories, CIBA, JAR and token exchange.
-                <a href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compatibility.md">Full compatibility notes</a>
-              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">gRPC plugins</span><span class="tag">Apache-2.0</span>
+              </div>
+              <details class="project-details mt-4">
+                <summary class="flex w-fit cursor-pointer list-none items-center gap-2 font-mono text-xs font-semibold text-brand">
+                  <i class="fa-solid fa-plus text-[10px]" aria-hidden="true"></i> Compatibility and install
+                </summary>
+                <div class="mt-3 grid gap-3 text-sm leading-6 text-ink-2">
+                  <ul class="grid gap-1.5 sm:grid-cols-2">
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Authentication API, hosted login, MFA and passwordless</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Management API and admin console</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> OpenID Certified: Basic, Config and Form Post OP</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Tested with node-auth0, the Auth0 CLI, Deploy CLI, auth0-react, nextjs-auth0 and more</li>
+                  </ul>
+                  <p>
+                    <strong class="font-semibold text-ink">Not in this release:</strong> WebAuthn, passkeys, SAML, WS-Federation, enterprise directories,
+                    CIBA, JAR and token exchange.
+                    <a class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand" href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compatibility.md">Full compatibility notes</a>
+                  </p>
 <pre class="term"><span class="c"># try the release candidate (self-signed TLS, for testing only)</span>
 <span class="p">$ </span>docker run -d --name zeroauthy -p 8443:8443 \
   -v zeroauthy-data:/data \
@@ -241,298 +524,338 @@
   -e ZEROAUTHY_SECURITY__MASTER_KEY="$(openssl rand -base64 32)" \
   -e <!--email_off-->ZEROAUTHY_BOOTSTRAP__ADMIN_EMAIL=you@example.com<!--/email_off--> \
   ghcr.io/occupysaas/zeroauthy:1.0.0-rc.1</pre>
-              <div class="tags">
-                <span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">gRPC plugins</span><span class="tag">Apache-2.0</span>
-              </div>
-              <div class="project__foot">
-                <a class="btn btn--red" href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">Get v1.0.0-rc.1</a>
-                <a class="btn" href="https://github.com/occupysaas/zeroauthy">View on GitHub <span class="stars"><span aria-hidden="true">★</span> <span data-stars="zeroauthy">313</span> stars</span></a>
-                <a class="btn btn--ghost" href="https://github.com/occupysaas/zeroauthy/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
-              </div>
+                </div>
+              </details>
             </div>
-          </article>
+            <div class="flex flex-wrap gap-2 lg:flex-col lg:items-stretch">
+              <a class="btn btn-primary" href="https://github.com/occupysaas/zeroauthy/releases/tag/v1.0.0-rc.1">Get v1.0.0-rc.1</a>
+              <a class="btn btn-secondary" href="https://github.com/occupysaas/zeroauthy">
+                GitHub <span class="text-muted">/</span> <i class="fa-solid fa-star text-brand" aria-hidden="true"></i> <span data-stars="zeroauthy">313</span>
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/occupysaas/zeroauthy/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
+            </div>
+          </div>
+        </article>
 
-          <article class="project reveal">
-            <div class="project__top">
-              <span class="badge">Early · in the open</span>
-              <span>Go · Vue · TypeScript</span>
-            </div>
-            <div class="project__body">
-              <h3 class="project__name">Sales<span class="red">Compel</span></h3>
-              <div class="project__vs">Replaces <s>Salesforce</s></div>
-              <p>
-                A free, open-source Salesforce replacement with a tenant-isolated Go/PostgreSQL core, a Vue record
-                editor, and a compatibility laboratory that checks behaviour against Salesforce's public API contract.
+        <article class="card reveal">
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_13rem] lg:items-start">
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                <span class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold text-brand">
+                  <i class="fa-solid fa-code-branch" aria-hidden="true"></i> Early, in the open
+                </span>
+                <span class="font-mono text-[11px] text-muted">Go / Vue / TypeScript</span>
+                <span class="font-mono text-[11px] text-muted">Replaces <s class="text-ink-2 decoration-brand decoration-2">Salesforce</s></span>
+              </div>
+              <h3 class="display h3 mt-2 text-ink">Sales<span class="text-brand">Compel</span></h3>
+              <p class="mt-2 max-w-3xl text-sm leading-6 text-ink-2">
+                A free, open-source Salesforce replacement with a tenant-isolated Go/PostgreSQL core, a Vue record editor, and a
+                compatibility laboratory.
               </p>
-              <ul class="checks">
-                <li>Persistent Account &amp; Contact CRUD</li>
-                <li>Object <code>describe</code> and limited queries</li>
-                <li>External-ID upsert &amp; bearer authentication</li>
-                <li>OpenAPI 3.2 REST contract &amp; offline test lab</li>
-              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tag">PostgreSQL</span><span class="tag">Multi-tenant</span><span class="tag">REST</span><span class="tag">i18n</span><span class="tag">Apache-2.0</span>
+              </div>
+              <details class="project-details mt-4">
+                <summary class="flex w-fit cursor-pointer list-none items-center gap-2 font-mono text-xs font-semibold text-brand">
+                  <i class="fa-solid fa-plus text-[10px]" aria-hidden="true"></i> Compatibility and install
+                </summary>
+                <div class="mt-3 grid gap-3 text-sm leading-6 text-ink-2">
+                  <ul class="grid gap-1.5 sm:grid-cols-2">
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Persistent Account and Contact CRUD</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> Object describe and limited queries</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> External-ID upsert and bearer authentication</li>
+                    <li class="flex gap-2.5"><i class="fa-solid fa-check mt-0.5 text-brand" aria-hidden="true"></i> OpenAPI 3.2 REST contract and offline test lab</li>
+                  </ul>
+                  <p>
+                    <strong class="font-semibold text-ink">Still early:</strong> the README lists exactly which features work today.
+                    <a class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand" href="https://github.com/occupysaas/salescompel">Read the project README</a>
+                  </p>
 <pre class="term"><span class="c"># run the compatibility laboratory</span>
 <span class="p">$ </span>npm ci --prefix compat/clients/node --ignore-scripts
 <span class="p">$ </span>npm --prefix compat/clients/node run check</pre>
-              <div class="tags">
-                <span class="tag">PostgreSQL</span><span class="tag">Multi-tenant</span><span class="tag">REST</span><span class="tag">i18n</span><span class="tag">Apache-2.0</span>
-              </div>
-              <div class="project__foot">
-                <a class="btn" href="https://github.com/occupysaas/salescompel">View on GitHub <span class="stars"><span aria-hidden="true">★</span> <span data-stars="salescompel">270</span> stars</span></a>
-                <a class="btn btn--ghost" href="https://github.com/occupysaas/salescompel/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
-              </div>
+                </div>
+              </details>
             </div>
-          </article>
+            <div class="flex flex-wrap gap-2 lg:flex-col lg:items-stretch">
+              <a class="btn btn-primary" href="https://github.com/occupysaas/salescompel">Explore SalesCompel</a>
+              <a class="btn btn-secondary" href="https://github.com/occupysaas/salescompel">
+                GitHub <span class="text-muted">/</span> <i class="fa-solid fa-star text-brand" aria-hidden="true"></i> <span data-stars="salescompel">270</span>
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/occupysaas/salescompel/blob/main/CLEAN_ROOM.md">Clean-room policy</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="motto" class="section-screen bg-brand-solid text-white">
+      <div class="wrap py-16 text-center sm:py-20">
+        <h2 class="display h2 mx-auto max-w-4xl">
+          You will own everything <span class="text-[#121215]">and be happy!</span>
+        </h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white">
+          Your code, your data, your servers. No seats to count, no renewals to dread, and nobody who can switch it off but you.
+        </p>
+        <div class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-xl border border-white/15 bg-[#121215]">
+          <div class="aspect-video">
+            <iframe class="h-full w-full" src="https://www.youtube-nocookie.com/embed/lqOAgItOueU" title="OccupySaaS theme video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- MOTTO -->
-    <section class="section motto" id="motto">
-      <div class="wrap">
-        <span class="kicker">Our motto</span>
-        <h2><span class="motto__line">You will own</span> <span class="motto__line">everything</span> <span class="motto__line">and be <span class="brush">happy!</span></span></h2>
-        <p class="lede">Your code, your data, your servers. No seats to count, no renewals to dread, and nobody who can switch it off but you.</p>
-        <div class="motto__video">
-          <iframe src="https://www.youtube-nocookie.com/embed/lqOAgItOueU" title="Our theme video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEXT -->
-    <section class="section section--rule" id="next">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <span class="kicker">The occupation map</span>
-          <h2>Who's <span class="brush">next?</span></h2>
-          <p class="lede">
-            Every category on this board is a monthly invoice somewhere. The movement picks the next target in public &mdash;
-            bring a spec, a use case, or a grudge.
+    <section id="next" class="section-screen">
+      <div class="wrap py-16 sm:py-24">
+        <div class="reveal max-w-3xl">
+          <h2 class="display h2 text-ink">Who's <span class="text-brand">next?</span></h2>
+          <p class="mt-5 text-lg leading-8 text-ink-2">
+            Every category on this board is a monthly invoice somewhere. The movement picks the next target in public.
+            Bring a spec, a use case, or a grudge.
           </p>
         </div>
 
-        <div class="targets reveal">
-          <div class="target target--live">
-            <span class="target__status">● Occupied</span>
-            <h3>Identity &amp; Auth</h3>
-            <p>ZeroAuthy &mdash; Auth0-compatible login, tokens and tenants.</p>
-          </div>
-          <div class="target target--live">
-            <span class="target__status">● Occupied</span>
-            <h3>CRM</h3>
-            <p>SalesCompel &mdash; Salesforce-compatible records and REST API.</p>
-          </div>
-          <div class="target">
-            <span class="target__status">○ Proposed</span>
-            <h3>Docs &amp; Wikis</h3>
-            <p>Team knowledge bases that don't lock your writing behind a seat licence.</p>
-          </div>
-          <div class="target">
-            <span class="target__status">○ Proposed</span>
-            <h3>Issue Tracking</h3>
-            <p>Tickets, sprints and boards with a compatible API for existing integrations.</p>
-          </div>
-          <div class="target">
-            <span class="target__status">○ Proposed</span>
-            <h3>Feature Flags</h3>
-            <p>SDK-compatible flag evaluation you can run next to your own services.</p>
-          </div>
-          <div class="target">
-            <span class="target__status">○ Proposed</span>
-            <h3>Observability</h3>
-            <p>Logs, metrics and traces without per-gigabyte ransom notes.</p>
-          </div>
-          <div class="target">
-            <span class="target__status">○ Proposed</span>
-            <h3>Customer Support</h3>
-            <p>Help desk, inbox and knowledge base, priced at zero agents.</p>
-          </div>
-          <a class="target target--ask" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20&amp;body=Which%20SaaS%20should%20we%20occupy%20next%2C%20and%20why%3F">
-            <span class="target__status red">+ Your pick</span>
-            <h3>Propose a target</h3>
-            <p>Open an issue and make the case.</p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="reveal rounded-xl border border-[#2a2a31] bg-[#121215] p-6 text-[#f4f1ea]">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-[#ff636a]"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Occupied</p>
+            <h3 class="h4 mt-4 font-bold text-[#f4f1ea]">Identity &amp; Auth</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">ZeroAuthy, an Auth0-compatible login, token and tenant server.</p>
+          </article>
+          <article class="reveal rounded-xl border border-[#2a2a31] bg-[#121215] p-6 text-[#f4f1ea]">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-[#ff636a]"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Occupied</p>
+            <h3 class="h4 mt-4 font-bold text-[#f4f1ea]">CRM</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">SalesCompel, Salesforce-compatible records and a REST API.</p>
+          </article>
+          <article class="card reveal p-6">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-muted"><i class="fa-regular fa-circle" aria-hidden="true"></i> Proposed</p>
+            <h3 class="h4 mt-4 font-bold text-ink">Docs &amp; Wikis</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2">Team knowledge bases that do not lock your writing behind a seat licence.</p>
+          </article>
+          <article class="card reveal p-6">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-muted"><i class="fa-regular fa-circle" aria-hidden="true"></i> Proposed</p>
+            <h3 class="h4 mt-4 font-bold text-ink">Issue Tracking</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2">Tickets, sprints and boards with a compatible API for existing integrations.</p>
+          </article>
+          <article class="card reveal p-6">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-muted"><i class="fa-regular fa-circle" aria-hidden="true"></i> Proposed</p>
+            <h3 class="h4 mt-4 font-bold text-ink">Feature Flags</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2">SDK-compatible flag evaluation you can run next to your own services.</p>
+          </article>
+          <article class="card reveal p-6">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-muted"><i class="fa-regular fa-circle" aria-hidden="true"></i> Proposed</p>
+            <h3 class="h4 mt-4 font-bold text-ink">Observability</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2">Logs, metrics and traces without per-gigabyte ransom notes.</p>
+          </article>
+          <article class="card reveal p-6">
+            <p class="flex items-center gap-2 font-mono text-[11px] text-muted"><i class="fa-regular fa-circle" aria-hidden="true"></i> Proposed</p>
+            <h3 class="h4 mt-4 font-bold text-ink">Customer Support</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2">Help desk, inbox and knowledge base, priced at zero agents.</p>
+          </article>
+          <a class="group reveal rounded-xl border border-line bg-brand-soft p-6 transition hover:bg-brand-solid" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20&amp;body=Which%20SaaS%20should%20we%20occupy%20next%2C%20and%20why%3F">
+            <p class="flex items-center justify-between font-mono text-[11px] text-brand transition group-hover:text-white">
+              <span class="flex items-center gap-2"><i class="fa-solid fa-plus" aria-hidden="true"></i> Your pick</span>
+              <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+            </p>
+            <h3 class="h4 mt-4 font-bold text-ink transition group-hover:text-white">Propose a target</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-2 transition group-hover:text-white">Open an issue and make the case.</p>
           </a>
         </div>
-        <p class="targets-note">Proposed categories are open for discussion, not commitments. Names of existing products are used only to describe compatibility.</p>
+        <p class="mt-6 text-sm text-muted">Proposed categories are open for discussion, not commitments. Names of existing products are used only to describe compatibility.</p>
       </div>
     </section>
 
-    <!-- HISTORY -->
-    <section class="section section--rule" id="history">
-      <div class="wrap history">
+    <section id="history" class="section-screen bg-surface">
+      <div class="wrap grid gap-10 py-16 sm:gap-12 sm:py-24 lg:grid-cols-[0.9fr_1.1fr]">
         <div class="reveal">
-          <span class="kicker">Lineage</span>
-          <h2>From Zuccotti Park<br>to <span class="brush">git push.</span></h2>
-          <p class="lede">
-            <a href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street</a> began on
-            17 September 2011 in Zuccotti Park, New York City, with a simple frame: the 1% and the 99%.
+          <h2 class="display h2 text-ink">
+            From Zuccotti Park to <span class="text-brand">git push.</span>
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-ink-2">
+            <a class="font-medium text-ink underline decoration-brand/40 underline-offset-4 hover:decoration-brand" href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street</a>
+            began on 17 September 2011 in Zuccotti Park, New York City, with a simple frame: the 1% and the 99%.
             It had no leaders, made decisions in open assemblies, and spread to hundreds of cities.
           </p>
-          <p>
-            OccupySaaS borrows that spirit and swaps tents for terminals. No marches, no property damage &mdash;
-            just working software, published under an open licence, that anyone can run.
+          <p class="mt-4 text-base leading-7 text-ink-2">
+            OccupySaaS borrows that spirit and swaps tents for terminals. No marches, no property damage. Just working software,
+            published under an open licence, that anyone can run.
           </p>
-          <blockquote class="quote">
-            <p>&ldquo;We are the 99%.&rdquo;</p>
-            <footer>&mdash; Occupy Wall Street, 2011</footer>
+          <blockquote class="mt-6 rounded-xl bg-paper p-6">
+            <i class="fa-solid fa-quote-left text-2xl text-brand" aria-hidden="true"></i>
+            <p class="marker mt-3 text-2xl text-ink sm:text-3xl">We are the 99%.</p>
+            <footer class="mt-2 font-mono text-xs text-muted">Occupy Wall Street, 2011</footer>
           </blockquote>
         </div>
 
-        <ol class="timeline reveal">
-          <li>
-            <time datetime="2011-09-17">17 Sep 2011</time>
-            <strong>Occupy Wall Street begins</strong>
-            <p>Protesters set up camp in Zuccotti Park in Manhattan's Financial District.</p>
+        <ol class="reveal relative border-l border-line">
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2011-09-17">17 Sep 2011</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">Occupy Wall Street begins</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">Protesters set up camp in Zuccotti Park in Manhattan's Financial District.</p>
           </li>
-          <li>
-            <time datetime="2011-10">Oct 2011</time>
-            <strong>The movement spreads</strong>
-            <p>Occupy camps and general assemblies appear in cities around the world.</p>
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2011-10">Oct 2011</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">The movement spreads</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">Occupy camps and general assemblies appear in cities around the world.</p>
           </li>
-          <li>
-            <time datetime="2011-11-15">15 Nov 2011</time>
-            <strong>Zuccotti Park is cleared</strong>
-            <p>The camp ends; the language of the 1% and the 99% doesn't.</p>
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2011-11-15">15 Nov 2011</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">Zuccotti Park is cleared</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">The camp ends; the language of the 1% and the 99% does not.</p>
           </li>
-          <li>
-            <time datetime="2022">2022 &ndash; 2025</time>
-            <strong>The great tech layoffs</strong>
-            <p>Wave after wave of cuts across the industry while subscription prices keep climbing.</p>
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2022">2022-2025</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">The great tech layoffs</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">Wave after wave of cuts across the industry while subscription prices keep climbing.</p>
           </li>
-          <li>
-            <time datetime="2026-10-14">14 Oct 2026</time>
-            <strong>ZeroAuthy goes public</strong>
-            <p>The first clean-room rebuild opens its repo under Apache-2.0.</p>
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2026-10-14">14 Oct 2026</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">ZeroAuthy goes public</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">The first clean-room rebuild opens its repo under Apache-2.0.</p>
           </li>
-          <li>
-            <time datetime="2026-10-15">15 Oct 2026</time>
-            <strong>SalesCompel joins the occupation</strong>
-            <p>The second tower. More to come &mdash; decided in the open.</p>
+          <li class="relative pb-7 pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-line bg-surface" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2026-10-15">15 Oct 2026</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">SalesCompel joins the occupation</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">The second tower. More to come, decided in the open.</p>
           </li>
-          <li class="now">
-            <time datetime="2026-11-04">4 Nov 2026</time>
-            <strong>ZeroAuthy v1.0.0-rc.1</strong>
-            <p>The first release candidate: binaries and a container image anyone can run today.</p>
+          <li class="relative pl-6 sm:pl-8">
+            <span class="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full bg-brand-solid" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-brand" datetime="2026-11-04">4 Nov 2026</time>
+            <strong class="mt-1 block text-base font-semibold text-ink">ZeroAuthy v1.0.0-rc.1</strong>
+            <p class="mt-1 text-sm leading-6 text-ink-2">The first release candidate: binaries and a container image anyone can run today.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- JOIN -->
-    <section class="section section--dark join" id="join">
-      <div class="wrap">
-        <span class="kicker">Join</span>
-        <h2>Occupy <span class="brush">everything.</span></h2>
-        <p class="lede">You don't need permission, a badge or a manager. You need a laptop and an afternoon.</p>
+    <section id="join" class="section-screen overflow-hidden bg-[#121215] text-[#f4f1ea]">
+      <div class="wrap py-16 text-center sm:py-20">
+        <h2 class="display h2">Occupy <span class="text-[#ff5a5f]">everything.</span></h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#cbc5b8]">
+          You do not need permission, a badge or a manager. You need a laptop and an afternoon.
+        </p>
 
-        <div class="ways">
-          <div class="way reveal">
-            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
-            <h3>Write code</h3>
-            <p>Pick an open issue, follow the clean-room policy, open a pull request.</p>
+        <div class="mt-10 grid gap-6 text-left sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+          <div class="reveal">
+            <i class="fa-solid fa-code text-xl text-[#ff5a5f]" aria-hidden="true"></i>
+            <h3 class="h5 mt-3 font-semibold text-[#f4f1ea]">Write code</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">Pick an open issue, follow the clean-room policy, open a pull request.</p>
           </div>
-          <div class="way reveal">
-            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6"/><rect x="3" y="14" width="18" height="6"/><path d="M7 7h.01M7 17h.01"/></svg>
-            <h3>Self-host it</h3>
-            <p>Run a release against your real SDKs and tell us exactly where it breaks.</p>
+          <div class="reveal">
+            <i class="fa-solid fa-server text-xl text-[#ff5a5f]" aria-hidden="true"></i>
+            <h3 class="h5 mt-3 font-semibold text-[#f4f1ea]">Self-host it</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">Run a release against your real SDKs and tell us exactly where it breaks.</p>
           </div>
-          <div class="way reveal">
-            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
-            <h3>Write specs</h3>
-            <p>Turn public docs into precise, testable specifications for the builders.</p>
+          <div class="reveal">
+            <i class="fa-solid fa-file-lines text-xl text-[#ff5a5f]" aria-hidden="true"></i>
+            <h3 class="h5 mt-3 font-semibold text-[#f4f1ea]">Write specs</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">Turn public docs into precise, testable specifications for the builders.</p>
           </div>
-          <div class="way reveal">
-            <svg class="way__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l15-6v14L3 13z"/><path d="M7 13v5h3v-4"/></svg>
-            <h3>Make noise</h3>
-            <p>Star the repos, share the site, and tell your CFO what you're paying per seat.</p>
+          <div class="reveal">
+            <i class="fa-solid fa-bullhorn text-xl text-[#ff5a5f]" aria-hidden="true"></i>
+            <h3 class="h5 mt-3 font-semibold text-[#f4f1ea]">Make noise</h3>
+            <p class="mt-2 text-sm leading-6 text-[#cbc5b8]">Star the repos, share the site, and tell your CFO what you are paying per seat.</p>
           </div>
         </div>
 
-        <div class="join__ctas">
-          <a class="btn btn--red" href="https://github.com/occupysaas">Join on GitHub</a>
-          <a class="btn btn--ghost" href="https://discord.gg/zwP8aP65R">Join on Discord</a>
-          <a class="btn btn--ghost" href="https://buymeacoffee.com/occupysaas">Donate via Buy Me a Coffee</a>
-          <a class="btn btn--ghost" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20">Propose a target</a>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a class="btn btn-primary" href="https://github.com/occupysaas">Join on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a class="btn btn-on-dark" href="https://discord.gg/zwP8aP65R">Join on Discord <i class="fa-brands fa-discord" aria-hidden="true"></i></a>
+          <a class="btn btn-on-dark" href="https://buymeacoffee.com/occupysaas">Donate <i class="fa-solid fa-mug-hot" aria-hidden="true"></i></a>
+          <a class="btn btn-on-dark" href="https://github.com/occupysaas/website/issues/new?title=Target%20proposal%3A%20">Propose a target</a>
         </div>
       </div>
-      <div class="join__crowd" role="presentation"></div>
+      <div class="crowd h-20 invert opacity-30 sm:h-28" aria-hidden="true"></div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <span class="kicker">Questions</span>
-          <h2>Fair <span class="brush">questions.</span></h2>
+    <section id="faq" class="section-screen wrap py-16 sm:py-24">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div class="reveal">
+          <h2 class="display h2 text-ink">Fair questions.</h2>
+          <p class="mt-5 text-base leading-7 text-ink-2">
+            Straight answers about the method, the licence and what is ready today.
+          </p>
+          <p class="mt-4 text-sm text-muted">
+            Still unsure? <a class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand" href="https://discord.gg/zwP8aP65R">Ask in Discord</a>.
+          </p>
         </div>
-        <div class="faq">
-          <details>
-            <summary>Is this legal?</summary>
-            <div>
-              <p>Clean-room reimplementation is a long-established way to build compatible software: you work only from
-              public information and independently write your own code. Interoperating with an API is not the same as
-              copying a product. Each project publishes its clean-room policy and source provenance so anyone can check
-              the work. This page isn't legal advice; if you're adopting a project for a business, talk to your own counsel.</p>
+
+        <div class="faq reveal border-y border-line">
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Is this legal?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Clean-room reimplementation is a long-established way to build compatible software: you work only from public information and independently write your own code. Interoperating with an API is not the same as copying a product. Each project publishes its clean-room policy and source provenance so anyone can check the work. This page is not legal advice. If you are adopting a project for a business, talk to your own counsel.</p>
             </div>
           </details>
-          <details>
-            <summary>Are you affiliated with Auth0, Okta or Salesforce?</summary>
-            <div>
-              <p>No. OccupySaaS and its projects are independent and not affiliated with, endorsed by, or sponsored by
-              any vendor named on this site. Product names are used only to describe compatibility.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Are you affiliated with Auth0, Okta or Salesforce?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>No. OccupySaaS and its projects are independent and not affiliated with, endorsed by, or sponsored by any vendor named on this site. Product names are used only to describe compatibility.</p>
             </div>
           </details>
-          <details>
-            <summary>Can former employees of those companies contribute?</summary>
-            <div>
-              <p>Yes, but never with confidential knowledge from a former employer. Contributors work only from public
-              material, and anyone with relevant inside knowledge should stay on the public-spec side of the firewall
-              or sit that project out. When in doubt, read the project's <code>CLEAN_ROOM.md</code> and ask first.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Can former employees of those companies contribute?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Yes, but never with confidential knowledge from a former employer. Contributors work only from public material, and anyone with relevant inside knowledge should stay on the public-spec side of the firewall or sit that project out. When in doubt, read the project's <code class="rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.85em] text-ink">CLEAN_ROOM.md</code> and ask first.</p>
             </div>
           </details>
-          <details>
-            <summary>Why use AI to build it?</summary>
-            <div>
-              <p>Because the giants had thousands of engineers and we have a movement. AI agents let a small group turn a
-              precise spec into working code quickly. Humans write the specs, review every change, and own the result,
-              and compatibility tests against real SDKs decide what counts as done.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Why use AI to build it?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Because the giants had thousands of engineers and we have a movement. AI agents let a small group turn a precise spec into working code quickly. Humans write the specs, review every change, and own the result, and compatibility tests against real SDKs decide what counts as done.</p>
             </div>
           </details>
-          <details>
-            <summary>Why Go?</summary>
-            <div>
-              <p>Portability. A Go project compiles to a single self-contained binary, so self-hosting means dropping one
-              file onto a server or into a Docker or Podman image &mdash; no installer, no runtime to set up, no tree of
-              shared libraries to keep in sync. The same toolchain cross-compiles for Linux, macOS, Windows, x86 and ARM,
-              and the result fits in a minimal container image. If you're leaving a SaaS vendor, the replacement should be
-              this easy to carry.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Why Go?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Portability. A Go project compiles to a single self-contained binary, so self-hosting means dropping one file onto a server or into a Docker or Podman image. No installer, no runtime to set up, no tree of shared libraries to keep in sync. The same toolchain cross-compiles for Linux, macOS, Windows, x86 and ARM, and the result fits in a minimal container image. If you are leaving a SaaS vendor, the replacement should be this easy to carry.</p>
             </div>
           </details>
-          <details>
-            <summary>Why not Rust?</summary>
-            <div>
-              <p>Nothing is wrong with Rust, and we're not against it. Go was picked for the first projects because it makes
-              the one-file, container-friendly drop-in the default with very little build setup. Rust can get there too;
-              Go just gets there more simply for the kind of servers we're building.</p>
-              <p>Rust recreations of these projects are welcome &mdash; they just haven't been made yet. The specs, API
-              contracts and compatibility tests are language-neutral, so a Rust port can be checked against the same
-              SDKs. If you want to start one, <a href="https://github.com/occupysaas/website/issues/new?title=Rust%20port%3A%20">open an issue</a>
-              and say which project.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Why not Rust?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Nothing is wrong with Rust, and we are not against it. Go was picked for the first projects because it makes the one-file, container-friendly drop-in the default with very little build setup. Rust can get there too; Go just gets there more simply for the kind of servers we are building.</p>
+              <p class="mt-3">Rust recreations of these projects are welcome. They just have not been made yet. The specs, API contracts and compatibility tests are language-neutral, so a Rust port can be checked against the same SDKs. If you want to start one, <a class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand" href="https://github.com/occupysaas/website/issues/new?title=Rust%20port%3A%20">open an issue</a> and say which project.</p>
             </div>
           </details>
-          <details>
-            <summary>Is it production-ready?</summary>
-            <div>
-              <p>Not yet. ZeroAuthy's first release candidate, v1.0.0-rc.1, is an early preview, and its
-              <a href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compat/matrix.md">compatibility matrix</a>
-              lists the gaps. SalesCompel is earlier still, and its README says exactly which features work today.
-              Try them, break them, and file issues.</p>
+          <details class="group border-b border-line">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              Is it production-ready?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Not yet. ZeroAuthy's first release candidate, v1.0.0-rc.1, is an early preview, and its <a class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand" href="https://github.com/occupysaas/zeroauthy/blob/v1.0.0-rc.1/docs/compat/matrix.md">compatibility matrix</a> lists the gaps. SalesCompel is earlier still, and its README says exactly which features work today. Try them, break them, and file issues.</p>
             </div>
           </details>
-          <details>
-            <summary>What does it cost?</summary>
-            <div>
-              <p>Nothing. Every project is released under the Apache License 2.0. Run it, fork it, sell services around it.
-              The only thing we ask is that you contribute back what you can.</p>
+          <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 pr-1 text-left text-base font-semibold text-ink sm:text-lg">
+              What does it cost?
+              <i class="fa-solid fa-plus shrink-0 text-sm text-brand transition-transform duration-200 group-open:rotate-45" aria-hidden="true"></i>
+            </summary>
+            <div class="max-w-[70ch] pb-5 pr-0 text-sm leading-7 text-ink-2 sm:pr-8">
+              <p>Nothing. Every project is released under the Apache License 2.0. Run it, fork it, sell services around it. The only thing we ask is that you contribute back what you can.</p>
             </div>
           </details>
         </div>
@@ -540,41 +863,61 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__grid">
+  <footer class="overflow-hidden bg-[#0e0e10] text-[#cbc5b8]">
+    <div class="mx-auto w-full max-w-[1200px] px-5 pt-14 sm:px-8">
+      <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
-          <div class="footer__brand"><img src="assets/img/favicon.svg" alt="" width="36" height="36">Occupy<span class="red">SaaS</span></div>
-          <p>A movement for the laid-off developers of the world: clean-room, open-source rebuilds of the software that runs everything.</p>
+          <a class="flex items-center gap-2.5 text-[#f4f1ea]" href="#top" aria-label="OccupySaaS home">
+            <img src="assets/img/favicon.svg" alt="" width="36" height="36" class="h-9 w-9 rounded-md">
+            <span class="text-lg font-black tracking-tight">Occupy<span class="text-[#ff5a5f]">SaaS</span></span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm leading-6 text-[#cbc5b8]">
+            A movement for the laid-off developers of the world: clean-room, open-source rebuilds of the software that runs everything.
+          </p>
+          <div class="mt-5 flex items-center gap-2">
+            <a class="grid h-9 w-9 place-items-center rounded-lg border border-[#2a2a31] text-[#f4f1ea] transition hover:bg-[#1c1c21]" href="https://github.com/occupysaas" aria-label="OccupySaaS on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a class="grid h-9 w-9 place-items-center rounded-lg border border-[#2a2a31] text-[#f4f1ea] transition hover:bg-[#1c1c21]" href="https://discord.gg/zwP8aP65R" aria-label="OccupySaaS on Discord"><i class="fa-brands fa-discord" aria-hidden="true"></i></a>
+            <a class="grid h-9 w-9 place-items-center rounded-lg border border-[#2a2a31] text-[#f4f1ea] transition hover:bg-[#1c1c21]" href="https://buymeacoffee.com/occupysaas" aria-label="Donate via Buy Me a Coffee"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></a>
+          </div>
         </div>
+
         <div>
-          <h4>Projects</h4>
-          <ul>
-            <li><a href="https://github.com/occupysaas/zeroauthy">ZeroAuthy</a></li>
-            <li><a href="https://github.com/occupysaas/salescompel">SalesCompel</a></li>
-            <li><a href="https://github.com/occupysaas">All repositories</a></li>
+          <h2 class="footer-label font-semibold text-[#f4f1ea]">Projects</h2>
+          <ul class="mt-4 grid gap-2.5 text-sm">
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://github.com/occupysaas/zeroauthy">ZeroAuthy</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://github.com/occupysaas/salescompel">SalesCompel</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://github.com/occupysaas">All repositories</a></li>
           </ul>
         </div>
+
         <div>
-          <h4>Movement</h4>
-          <ul>
-            <li><a href="#method">Clean-room method</a></li>
-            <li><a href="#next">Occupation map</a></li>
-            <li><a href="https://discord.gg/zwP8aP65R">Discord community</a></li>
-            <li><a href="https://buymeacoffee.com/occupysaas">Donate via Buy Me a Coffee</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street (Wikipedia)</a></li>
-            <li><a href="https://github.com/occupysaas/website">Edit this site</a></li>
+          <h2 class="footer-label font-semibold text-[#f4f1ea]">Movement</h2>
+          <ul class="mt-4 grid gap-2.5 text-sm">
+            <li><a class="transition hover:text-[#f4f1ea]" href="#method">Clean-room method</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="#next">Occupation map</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://discord.gg/zwP8aP65R">Discord community</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://buymeacoffee.com/occupysaas">Donate via Buy Me a Coffee</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street (Wikipedia)</a></li>
+            <li><a class="transition hover:text-[#f4f1ea]" href="https://github.com/occupysaas/website">Edit this site</a></li>
           </ul>
         </div>
       </div>
-      <p class="footer__legal">
+
+      <p class="mt-12 border-t border-[#2a2a31] pt-6 text-xs leading-6 text-[#9b978e]">
         Auth0 and Okta are trademarks of Okta, Inc. Salesforce is a trademark of Salesforce, Inc. All other trademarks
         belong to their respective owners. OccupySaaS is not affiliated with, endorsed by, or sponsored by any of them;
         names are used only to describe compatibility. Site content licensed under Apache-2.0.
       </p>
+
+      <a class="display wordmark mt-10 block select-none text-center text-[clamp(3.5rem,13vw,10rem)] leading-[0.8] text-[#f4f1ea]" href="#top" aria-label="Back to top">OCCUPY <span class="text-[#ff5a5f]">SAAS</span></a>
+      <p class="mt-6 pb-8 text-center font-mono text-[11px] text-[#9b978e]">
+        UI/UX design by <a class="text-[#f4f1ea] underline decoration-[#ff5a5f] underline-offset-4" href="https://vspcoderz.tech" rel="noopener">lavenv0</a>
+      </p>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=20261105b" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/site.js?v=20261111b" defer></script>
 </body>
 </html>

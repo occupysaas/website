@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" fill="none">
+  <path d="M60 150h260" stroke="#8a867e" stroke-width="7" stroke-linecap="round"/>
+  <path d="M430 150h470" stroke="#8a867e" stroke-width="7" stroke-linecap="round"/>
+
+  <g>
+    <rect x="104" y="86" width="12" height="18" rx="6" fill="#f4f1ea" stroke="#121215" stroke-width="4"/>
+    <path d="M86 150v-22a24 24 0 0 1 48 0v22Z" fill="#f4f1ea" stroke="#121215" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="110" cy="72" r="15" fill="#f4f1ea" stroke="#121215" stroke-width="5"/>
+  </g>
+  <g>
+    <rect x="169" y="86" width="12" height="18" rx="6" fill="#f4f1ea" stroke="#121215" stroke-width="4"/>
+    <path d="M151 150v-22a24 24 0 0 1 48 0v22Z" fill="#f4f1ea" stroke="#121215" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="175" cy="72" r="15" fill="#f4f1ea" stroke="#121215" stroke-width="5"/>
+  </g>
+  <g>
+    <rect x="234" y="86" width="12" height="18" rx="6" fill="#f4f1ea" stroke="#121215" stroke-width="4"/>
+    <path d="M216 150v-22a24 24 0 0 1 48 0v22Z" fill="#f4f1ea" stroke="#121215" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="240" cy="72" r="15" fill="#f4f1ea" stroke="#121215" stroke-width="5"/>
+  </g>
+
+  <path d="M300 28v38" stroke="#cf1b24" stroke-width="8" stroke-linecap="round"/>
+  <path d="M286 52l14 18 14-18" stroke="#cf1b24" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M350 92l60 58" stroke="#8a867e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M410 92l-60 58" stroke="#8a867e" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="344" cy="86" r="12" fill="#cf1b24" stroke="#121215" stroke-width="5"/>
+  <circle cx="416" cy="86" r="12" fill="#cf1b24" stroke="#121215" stroke-width="5"/>
+  <circle cx="380" cy="121" r="6" fill="#8a867e"/>
+
+  <path d="M520 144h200" stroke="#8a867e" stroke-width="7" stroke-linecap="round"/>
+  <rect x="540" y="58" width="160" height="92" rx="10" fill="#f4f1ea" stroke="#121215" stroke-width="6"/>
+  <path d="M580 92l-16 18 16 18M660 92l16 18-16 18M624 84l-12 52" stroke="#cf1b24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M790 140V50" stroke="#cf1b24" stroke-width="10" stroke-linecap="round"/>
+  <path d="M770 70l20-22 20 22" stroke="#cf1b24" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
