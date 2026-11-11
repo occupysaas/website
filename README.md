@@ -1,27 +1,43 @@
 # occupysaas.com
+
 Reclaiming the software ecosystem, one open-source project at a time.
 
-The public site for **OccupySaaS** — clean-room, open-source, drop-in replacements for the SaaS giants.
+The public site for **OccupySaaS**: clean-room, open-source, drop-in replacements for the SaaS giants.
 
-Plain static HTML/CSS/JS, no build step.
+Static HTML on GitHub Pages, with Tailwind CSS compiled ahead of time. No client-side framework.
 
 ```
-index.html            the page
-assets/css/site.css   styles (black / white / protest red)
-assets/js/site.js     mobile nav, GitHub star counts + scroll reveal
-assets/img/           logo, crowd silhouette, favicon, social card
+index.html                  the page
+src/input.css               Tailwind source and design tokens
+assets/css/site.css         compiled styles (committed for local preview)
+assets/js/site.js           theme toggle, mobile nav, GitHub stars, scroll reveal
+assets/img/                 logo, crowd silhouette, favicon, social card
+robots.txt                  crawl rules and sitemap pointer
+sitemap.xml                 canonical URL list
+manifest.webmanifest        install metadata
 ```
+
+## Build styles
+
+```sh
+npm install
+npm run build:css      # one-off, minified
+npm run dev:css        # watch mode while editing
+```
+
+The Pages workflow rebuilds `assets/css/site.css` on every push, so CI never ships stale classes.
 
 ## Preview locally
 
 ```sh
-python3 -m http.server 8000
+npm run build:css
+npm run serve
 # open http://localhost:8000
 ```
 
 ## Publish on GitHub Pages
 
-Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`, then set the
+Settings -> Pages -> *Deploy from a branch* -> `main` / `/ (root)`, then set the
 custom domain to `occupysaas.com` (the `CNAME` file in this repo already does this) and
 tick *Enforce HTTPS* once the certificate is issued.
 
